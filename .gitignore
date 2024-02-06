@@ -1,0 +1,11 @@
+# Ignorar la carpeta de datos
+venv/
+
+# Ignorar la carpeta de archivos generados por Python
+__pycache__/
+
+# Ignorar el archivo .env que contiene variables de entorno sensibles
+.env
+
+# Ignorar el archivo .bat
+*.bat
