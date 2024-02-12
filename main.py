@@ -3,7 +3,7 @@ import pandas as pd
 import dotenv
 
 from functions import correo
-from db.conn_ibm import imb_conx
+from db.conn_ibm import ibm_conx
 from db.conn_pg import pg_conx
 
 from datetime import datetime
@@ -34,7 +34,7 @@ try:
 
     ### SCRIPT PARA IBM
     # Creamos variables de coneccion al IBM
-    connection_ibm, cursor_ibm = imb_conx()
+    connection_ibm, cursor_ibm = ibm_conx()
 
     # Obtener datos de las tablas 'MMETREL0' y 'MMACREL0' en la base de datos IBM y realizar el procesamiento necesario
     tb_as_sync = "SELECT DISTINCT ETCODLIN, ETCODORI, ETCODMAR, ETCODART, ETCODFAB, ACDSCLAR FROM LIBPRDDAT.MMETREL0 m LEFT JOIN LIBPRDDAT.MMACREL0 m2 ON m.ETCODLIN = m2.ACCODLIN AND m.ETCODART = m2.ACCODART"

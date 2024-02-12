@@ -1,10 +1,10 @@
 import pandas as pd
 
-from db.conn_ibm import imb_conx
+from db.conn_ibm import ibm_conx
 from db.conn_pg import pg_conx
 
 connection_pg, cursor_pg = pg_conx()
-connection_ibm, cursor_ibm = imb_conx()
+connection_ibm, cursor_ibm = ibm_conx()
 
 tb_async = "SELECT * FROM LIBPRDDAT.AS_SYNC as2 WHERE as2.SYTPOPER = 'Update' AND as2.SYTABLA = 'MMETREP' ORDER BY  as2.SYFECHAC DESC FETCH FIRST 10 ROWS ONLY"
 cursor_ibm.execute(tb_async)

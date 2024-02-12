@@ -5,7 +5,7 @@ import dotenv
 # Cargar variables de entorno desde el archivo .env
 dotenv.load_dotenv()
 
-def imb_conx():
+def ibm_conx():
     try:
         # Configuración de la conexión
         connection_ibm = pyodbc.connect(
